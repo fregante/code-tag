@@ -32,6 +32,8 @@ npm install code-tag
 
 ```js
 import {html, css, gql, md} from 'code-tag';
+// Or:
+// const {html, css, gql, md} = require('code-tag');
 
 document.body.innerHTML = html`
 	<p>This is HTML in JS</p>
