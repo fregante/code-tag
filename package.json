@@ -1,6 +1,6 @@
 {
 	"name": "code-tag",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "noop functions to help formatters and syntax highlighters recognize embedded code",
 	"keywords": [
 		"prettier",
