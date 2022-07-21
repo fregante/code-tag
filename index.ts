@@ -5,9 +5,7 @@ function concatenateTemplateLiteralTag(
 	strings: TemplateStringsArray,
 	...keys: string[]
 ): string {
-	return strings
-		.map((string, i) => string + (i < keys.length ? keys[i]! : ''))
-		.join('');
+	return String.raw({raw: TemplateStringsArray}, ...keys);
 }
 
 /**
