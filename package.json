@@ -36,7 +36,7 @@
 	"scripts": {
 		"build": "microbundle --no-compress --no-sourcemap --format esm,cjs",
 		"prepack": "npm run build",
-		"test": "xo && npm run build",
+		"test": "xo && npm run build && node --test",
 		"watch": "npm run build -- --watch"
 	},
 	"devDependencies": {
