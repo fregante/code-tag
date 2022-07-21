@@ -10,9 +10,10 @@ const concatenateTemplateLiteralTag = (
 Enable highlighting/prettifying when used as html`<div>` or css`.a {}`
 https://prettier.io/docs/en/options.html#embedded-language-formatting
 */
-const any = concatenateTemplateLiteralTag;
+const any = new Proxy(concatenateTemplateLiteralTag, {get: () => concatenateTemplateLiteralTag});
 
 export {
+	any as default,
 	any,
 	any as html,
 	any as css,
