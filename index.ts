@@ -1,12 +1,10 @@
 // Prettier supports these languages:
 // https://github.com/prettier/prettier/blob/e46aba0ab279c764dc26e0f41f15c55122440c51/src/language-js/embed.js#L13
 
-function concatenateTemplateLiteralTag(
-	strings: TemplateStringsArray,
+const concatenateTemplateLiteralTag = (
+	raw: TemplateStringsArray,
 	...keys: string[]
-): string {
-	return String.raw({raw: strings}, ...keys);
-}
+): string => String.raw({raw}, ...keys);
 
 /**
 Enable highlighting/prettifying when used as html`<div>` or css`.a {}`
