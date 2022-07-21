@@ -1,5 +1,5 @@
 {
-	"name": "code-tags",
+	"name": "code-tag",
 	"version": "0.0.0",
 	"description": "noop functions to help formatters and syntax highlighters recognize embedded code",
 	"keywords": [
@@ -16,7 +16,7 @@
 		"template literals",
 		"tag"
 	],
-	"repository": "fregante/code-tags",
+	"repository": "fregante/code-tag",
 	"funding": "https://github.com/sponsors/fregante",
 	"license": "MIT",
 	"author": "Federico Brigante <me@fregante.com> (https://fregante.com)",
@@ -30,7 +30,8 @@
 	"source": "index.ts",
 	"types": "dist/index.d.ts",
 	"files": [
-		"dist"
+		"dist",
+		"index.ts"
 	],
 	"scripts": {
 		"build": "microbundle --no-compress --no-sourcemap --format esm,cjs",
@@ -40,6 +41,7 @@
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^3.0.1",
+		"@types/estree": "^1.0.0",
 		"microbundle": "^0.15.0",
 		"xo": "^0.49.0"
 	}

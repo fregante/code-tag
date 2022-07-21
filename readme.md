@@ -1,4 +1,4 @@
-# code-tags [![npm version](https://img.shields.io/npm/v/code-tags.svg)](https://www.npmjs.com/package/code-tags)
+# code-tag [![npm version](https://img.shields.io/npm/v/code-tag.svg)](https://www.npmjs.com/package/code-tag)
 
 > noop functions to help formatters and syntax highlighters recognize embedded code
 
@@ -25,13 +25,13 @@ document.body.innerHTML = `
 ## Install
 
 ```sh
-npm install code-tags
+npm install code-tag
 ```
 
 ## Usage
 
 ```js
-import {html, css, gql, md} from 'code-tags';
+import {html, css, gql, md} from 'code-tag';
 
 document.body.innerHTML = html`
 	<p>This is HTML in JS</p>
@@ -61,7 +61,7 @@ yourMarkdownConverter(md`
 There's also an `any` export that you can rename as you please:
 
 ```js
-import {any as mdx} from 'code-tags';
+import {any as mdx} from 'code-tag';
 
 mdx`
 	Some other <New>Language</New>

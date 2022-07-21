@@ -1,6 +1,6 @@
 env:
   IMPORT_TEXT: 'import {html, css, gql, md} from'
-  NPM_MODULE_NAME: code-tags
+  NPM_MODULE_NAME: code-tag
 
 # FILE GENERATED WITH: npx ghat fregante/ghatemplates/esm-lint
 # SOURCE: https://github.com/fregante/ghatemplates
