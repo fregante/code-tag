@@ -6,7 +6,7 @@ import esmDefaultExport, * as esm from './dist/index.mjs';
 
 const require = createRequire(import.meta.url);
 const cjs = require('./dist/index.js');
-const {destructuringFromCjs} = require('./dist/index.js'); 
+const {destructuredgFromRequire} = require('./dist/index.js'); 
 
 testContext(cjs, 'cjs');
 testContext(esm, 'esm');
@@ -19,7 +19,7 @@ function testContext({any, html, css, gql, md}, name) {
 			assert.equal(css`a`, 'a');
 			assert.equal(gql`a`, 'a');
 			assert.equal(md`a`, 'a');
-			assert.equal(destructuringFromCjs, cjs);
+			assert.equal(destructuredgFromRequire, cjs);
 			assert.equal(cjs.anything, cjs);
 			assert.equal(esmDefaultExport, any);
 			assert.equal(esmDefaultExport.anything, any);
