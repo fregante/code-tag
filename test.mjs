@@ -2,7 +2,7 @@ import assert from 'node:assert/strict';
 import {createRequire} from 'node:module';
 import {describe, it} from 'node:test';
 
-// The tests specifically expect the built versions to ensure that they're create correctly
+// The tests specifically import the built files to ensure that they're generated correctly
 import * as esm from './dist/index.mjs';
 
 const require = createRequire(import.meta.url);
