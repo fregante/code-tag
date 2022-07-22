@@ -13,39 +13,26 @@ testContext(esm, 'esm');
 
 function testContext({any, html, css, gql, md}, name) {
 	describe(name + ' imports', () => {
-		it('base string', () => {
+		it('exports', () => {
+			assert.equal(any, html);
+			assert.equal(any, css);
+			assert.equal(any, gql);
+			assert.equal(any, md);
+		});
+
+		it('code-tags', () => {
 			assert.equal(any`a`, 'a');
-			assert.equal(html`a`, 'a');
-			assert.equal(css`a`, 'a');
-			assert.equal(gql`a`, 'a');
-			assert.equal(md`a`, 'a');
-		});
-
-		it('template with interpolation', () => {
-			assert.equal(any`a${'b'}c${1}`, 'abc1');
-			assert.equal(html`a${'b'}c${1}`, 'abc1');
-			assert.equal(css`a${'b'}c${1}`, 'abc1');
-			assert.equal(gql`a${'b'}c${1}`, 'abc1');
-			assert.equal(md`a${'b'}c${1}`, 'abc1');
-		});
-
-		it('strings with escapes', () => {
-			assert.equal(any`\\\na${'\\\na'}`, '\\\na\\\na');
-			assert.equal(html`\\\na${'\\\na'}`, '\\\na\\\na');
-			assert.equal(css`\\\na${'\\\na'}`, '\\\na\\\na');
-			assert.equal(gql`\\\na${'\\\na'}`, '\\\na\\\na');
-			assert.equal(md`\\\na${'\\\na'}`, '\\\na\\\na');
+			assert.equal(any` a `, ' a ', 'Preserve boundary whitespace');
+			assert.equal(any`a${'b'}c${1}`, 'abc1', 'Interpolate with strings and numbers');
+			assert.equal(any`\\\na${'\\\na'}`, '\\\na\\\na', 'Preserve escape sequences');
+			assert.equal(any`🇪🇺 ${'🇺🇳'}`, '🇪🇺 🇺🇳', 'Preserve combined emojis');
 		});
 
 		it('stringifiable objects', () => {
 			const stringifiableObject = new Date();
-			const objectAsString = String(stringifiableObject);
+			const stringifiedObject = String(stringifiableObject);
 
-			assert.equal(any`${stringifiableObject}`, objectAsString);
-			assert.equal(html`${stringifiableObject}`, objectAsString);
-			assert.equal(css`${stringifiableObject}`, objectAsString);
-			assert.equal(gql`${stringifiableObject}`, objectAsString);
-			assert.equal(md`${stringifiableObject}`, objectAsString);
+			assert.equal(any`${stringifiableObject}`, stringifiedObject, 'Interpolate objects with toString');
 		});
 	});
 }
