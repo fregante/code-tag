@@ -2,7 +2,7 @@
 
 > noop functions to help formatters and syntax highlighters recognize embedded code
 
-By marking your embedded code with one of these functions, Prettier and syntax highlighters will recognize a string as a piece of code to format or highlight. You can see that GitHub also correctly highlights HTML within javascript as long as it uses the tag
+By marking your embedded code with one of these functions, [Prettier](https://prettier.io/docs/en/options.html#embedded-language-formatting) and syntax highlighters will recognize a string as a piece of code to format or highlight. You can see that GitHub also correctly highlights HTML within javascript as long as it uses the tag:
 
 ```js
 document.body.innerHTML = html`
