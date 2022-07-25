@@ -20,4 +20,5 @@ export {
 	any as graphql,
 	any as md,
 	any as markdown,
+	any as sql,
 };
