@@ -11,13 +11,14 @@ const cjs = require('./dist/index.js');
 testContext(cjs, 'cjs');
 testContext(esm, 'esm');
 
-function testContext({any, html, css, gql, md}, name) {
+function testContext({any, html, css, gql, md, sql}, name) {
 	describe(name + ' imports', () => {
 		it('exports', () => {
 			assert.equal(any, html);
 			assert.equal(any, css);
 			assert.equal(any, gql);
 			assert.equal(any, md);
+			assert.equal(any, sql);
 		});
 
 		it('code-tags', () => {

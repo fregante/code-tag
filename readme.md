@@ -31,9 +31,9 @@ npm install code-tag
 ## Usage
 
 ```js
-import {html, css, gql, md} from 'code-tag';
+import {html, css, gql, md, sql} from 'code-tag';
 // Or:
-// const {html, css, gql, md} = require('code-tag');
+// const {html, css, gql, md, sql} = require('code-tag');
 
 document.body.innerHTML = html`
 	<p>This is HTML in JS</p>
@@ -58,6 +58,8 @@ yourMarkdownConverter(md`
 
 	Is _highlighted_ [as well](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 `);
+
+await sqlQuery(sql`select * from users`);
 ```
 
 There's also an `any` export that you can rename as you please:
