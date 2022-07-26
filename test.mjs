@@ -21,7 +21,7 @@ function testContext({any, html, css, gql, md, sql}, name) {
 			assert.equal(any, sql);
 		});
 
-		it('code-tags', () => {
+		it('code-tag', () => {
 			assert.equal(any`a`, 'a');
 			assert.equal(any` a `, ' a ', 'Preserve boundary whitespace');
 			assert.equal(any`a${'b'}c${1}`, 'abc1', 'Interpolate with strings and numbers');
