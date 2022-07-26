@@ -1,4 +1,7 @@
-# code-tag [![npm version](https://img.shields.io/npm/v/code-tag.svg)](https://www.npmjs.com/package/code-tag)
+# code-tag [![npm version](https://img.shields.io/npm/v/code-tag.svg)][link-npm] [![(size)][badge-gzip]](#no-link)
+
+[badge-gzip]: https://img.shields.io/bundlephobia/minzip/code-tag.svg?label=gzipped
+[link-npm]: https://www.npmjs.com/package/code-tag
 
 > noop functions to help formatters and syntax highlighters recognize embedded code
 
