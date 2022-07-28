@@ -3,10 +3,10 @@ import {createRequire} from 'node:module';
 import {describe, it} from 'node:test';
 
 // The tests specifically import the built files to ensure that they're generated correctly
-import * as esm from './dist/index.mjs';
+import * as esm from './esm/index.js';
 
 const require = createRequire(import.meta.url);
-const cjs = require('./dist/index.js');
+const cjs = require('./cjs/index.js');
 
 testContext(cjs, 'cjs');
 testContext(esm, 'esm');

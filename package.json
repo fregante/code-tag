@@ -22,28 +22,27 @@
 	"license": "MIT",
 	"author": "Federico Brigante <me@fregante.com> (https://fregante.com)",
 	"exports": {
-		"require": "./dist/index.js",
-		"types": "./dist/index.d.ts",
-		"default": "./dist/index.mjs"
+		"require": "./cjs/index.js",
+		"types": "./cjs/index.d.ts",
+		"default": "./esm/index.js"
 	},
-	"main": "dist/index.js",
-	"module": "dist/index.mjs",
-	"source": "index.ts",
-	"types": "dist/index.d.ts",
+	"main": "cjs/index.js",
+	"module": "esm/index.js",
+	"types": "cjs/index.d.ts",
 	"files": [
-		"dist",
-		"index.ts"
+		"cjs",
+		"esm"
 	],
 	"scripts": {
-		"build": "microbundle --no-compress --no-sourcemap --format esm,cjs",
+		"build": "tsc && tsc --outDir cjs --module commonjs",
 		"prepack": "npm run build",
 		"test": "xo && npm run build && node --test",
-		"watch": "npm run build -- --watch"
+		"watch": "tsc --watch"
 	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^3.0.1",
 		"@types/estree": "^1.0.0",
-		"microbundle": "^0.15.0",
+		"typescript": "^4.7.4",
 		"xo": "^0.49.0"
 	}
 }
