@@ -25,8 +25,10 @@ function testContext({any, html, css, gql, md, sql}, name) {
 			assert.equal(any`a`, 'a');
 			assert.equal(any` a `, ' a ', 'Preserve boundary whitespace');
 			assert.equal(any`a${'b'}c${1}`, 'abc1', 'Interpolate with strings and numbers');
-			assert.equal(any`\\\na${'\\\na'}`, '\\\na\\\na', 'Preserve escape sequences');
-			assert.equal(any`🇪🇺 ${'🇺🇳'}`, '🇪🇺 🇺🇳', 'Preserve combined emojis');
+			assert.equal(any`\\\na\\\na`, '\\\na\\\na', 'Preserve escape sequences');
+			assert.equal(any`\\\na${'\\\na'}`, '\\\na\\\na', 'Preserve escape sequences in interpolation');
+			assert.equal(any`🇪🇺 🇺🇳`, '🇪🇺 🇺🇳', 'Preserve combined emojis');
+			assert.equal(any`🇪🇺 ${'🇺🇳'}`, '🇪🇺 🇺🇳', 'Preserve combined emojis in interpolation');
 		});
 
 		it('stringifiable objects', () => {
