@@ -4,7 +4,7 @@
 const concatenateTemplateLiteralTag = (
 	raw: TemplateStringsArray,
 	...keys: string[]
-): string => String.raw({raw}, ...keys);
+): string => keys.length === 0 ? raw[0] : String.raw({raw}, ...keys);
 
 /**
 Enable highlighting/prettifying when used as html`<div>` or css`.a {}`
