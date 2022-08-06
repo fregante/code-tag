@@ -18,6 +18,7 @@ document.body.innerHTML = html`
 You can find such tag functions in:
 
 - **code-tag**: this package, it returns the string as is
+- [escape-goat](https://github.com/sindresorhus/escape-goat): it escapes the any replaced value in the string
 - [lit-html](https://lit.dev/docs/templates/overview/): it helps write Web Components
 - [Apollo](https://www.apollographql.com/docs/resources/graphql-glossary/#gql-function): it parses GraphQL strings
 - [Emotion](https://emotion.sh/docs/@emotion/css): it defines CSS-in-JS
