@@ -33,15 +33,20 @@
 		"cjs",
 		"esm"
 	],
+	"xo": {
+		"rules": {
+			"import/order": "off"
+		}
+	},
 	"scripts": {
-		"build": "tsc && tsc --outDir cjs --module commonjs",
+		"build": "tsc && tsc --outDir cjs --module commonjs --moduleResolution node",
 		"prepack": "npm run build",
 		"test": "xo && npm run build && node --test",
 		"watch": "tsc --watch"
 	},
 	"devDependencies": {
-		"@sindresorhus/tsconfig": "^3.0.1",
-		"typescript": "^4.7.4",
-		"xo": "^0.49.0"
+		"@sindresorhus/tsconfig": "^5.0.0",
+		"typescript": "^5.3.3",
+		"xo": "^0.56.0"
 	}
 }
