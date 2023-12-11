@@ -2,6 +2,7 @@
 	"extends": "@sindresorhus/tsconfig",
 	"compilerOptions": {
 		"module": "es2020",
+		"moduleResolution": "Bundler",
 		"outDir": "esm"
 	},
 	"files": [
