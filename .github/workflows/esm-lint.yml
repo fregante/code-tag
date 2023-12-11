@@ -1,6 +1,7 @@
 env:
   IMPORT_TEXT: import {html, css, gql, md} from
   NPM_MODULE_NAME: code-tag
+  NODE_VERSION: 18
 
 # FILE GENERATED WITH: npx ghat fregante/ghatemplates/esm-lint
 # SOURCE: https://github.com/fregante/ghatemplates
@@ -88,7 +89,7 @@ jobs:
       - uses: actions/download-artifact@v3
       - uses: actions/setup-node@v4
         with:
-          node-version-file: package.json
+          node-version: ${{ env.NODE_VERSION }}
       - run: echo "${{ env.IMPORT_TEXT }} '${{ env.NPM_MODULE_NAME }}'" > index.mjs
       - run: npm install ./artifact
       - run: node index.mjs
