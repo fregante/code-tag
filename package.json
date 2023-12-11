@@ -33,20 +33,23 @@
 		"cjs",
 		"esm"
 	],
-	"xo": {
-		"rules": {
-			"import/order": "off"
-		}
-	},
 	"scripts": {
 		"build": "tsc && tsc --outDir cjs --module commonjs --moduleResolution node",
 		"prepack": "npm run build",
 		"test": "xo && npm run build && node --test",
 		"watch": "tsc --watch"
 	},
+	"xo": {
+		"rules": {
+			"import/order": "off"
+		}
+	},
 	"devDependencies": {
 		"@sindresorhus/tsconfig": "^5.0.0",
 		"typescript": "^5.3.3",
 		"xo": "^0.56.0"
+	},
+	"engines": {
+		"node": ">=18"
 	}
 }
